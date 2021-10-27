@@ -1,0 +1,110 @@
+body {
+    background: radial-gradient(circle, rgba(195, 250, 232, 1) 0%, rgba(9, 146, 104, 1) 100%);
+    font-family: 'Roboto', sans-serif;
+}
+
+form {
+    background-color: #e6fcf5;
+    border-radius: 5px;
+    border-top: 5px solid #087f5b;
+    /* border-radius: 2px 2px 5px 5p; */
+    box-shadow: 2px 2px 20px 6px #12b886;
+}
+
+.email:focus {
+    outline: none !important;
+    /* border: none !important; */
+    box-shadow: none !important;
+    /* background-color: transparent; */
+    /* background-color: transparent; */
+}
+
+.btn {
+    background-color: #12b886;
+    color: white;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background-color: #20c997;
+    color: white;
+    font-weight: 500;
+}
+
+.btn:active {
+    border: none;
+    outline: 0;
+    box-shadow: none;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translate(50%, -50%);
+    color: #087f5b;
+}
+
+.form-control:focus {
+    border: none;
+    outline: 0;
+    box-shadow: none;
+    border: 2px solid #12b886;
+    background-color: transparent;
+    transition: 0.5s;
+}
+
+.form-control {
+    border: none;
+    outline: 0;
+    box-shadow: none;
+    border-radius: 0px;
+    border: 2px solid transparent;
+    border-bottom: 2px solid #12b886;
+    background-color: transparent;
+}
+
+.input-parent {
+    position: relative;
+}
+
+.sign-up-a {
+    color: #087f5b;
+    text-decoration: none;
+}
+
+.sign-up-a:hover {
+    color: #12b886;
+}
+
+.line {
+    border-top: 2px solid #087f5b;
+    color: #087f5b;
+    opacity: 0.3;
+}
+
+.social-icon {
+    background-color: #12b886;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.social-icon:hover {
+    background-color: #20c997;
+}
+
+.social-icon i {
+    padding: 5px;
+}
+
+.form-txt {
+    color: #045c41;
+}
+
+.pass-icon {
+    cursor: pointer;
+}
+
+.pass-icon:hover i {
+    color: #12b886;
+}
