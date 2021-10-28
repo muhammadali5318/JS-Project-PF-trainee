@@ -118,12 +118,6 @@ body {
     height: 2rem;
     transition: 2s;
     margin: 0px;
-    /* display: none; */
-    /* visibility: hidden; */
-}
-
-.display {
-    /* display: none !important; */
 }
 
 tr:nth-child(even) {
@@ -137,4 +131,17 @@ tr:nth-child(odd) {
 .table-head tr {
     cursor: pointer;
     background-color: #20c997 !important;
+}
+
+.img-container {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    /* background-color: black; */
+}
+
+.img-container img {
+    width: 100%;
 }
