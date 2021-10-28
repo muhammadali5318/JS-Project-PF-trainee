@@ -12,13 +12,7 @@ xhr.open('get', "data.json", "true");
 xhr.onload = function() {
     const obj = JSON.parse(this.responseText);
     console.log(obj);
-    // console.log(obj[0].key);
-
-
-
     obj.forEach(element => {
-
-        // console.log(element);
 
         TableBody.insertAdjacentHTML('beforeend', `
 
