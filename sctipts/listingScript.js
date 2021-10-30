@@ -2,8 +2,7 @@
 
 
 const TableBody = document.querySelector(".table-body");
-// console.log(list);
-console.log(TableBody);
+// console.log(TableBody);
 
 const xhr = new XMLHttpRequest();
 
@@ -11,12 +10,14 @@ xhr.open('get', "data.json", "true");
 
 xhr.onload = function() {
     const obj = JSON.parse(this.responseText);
-    console.log(obj);
+    // console.log(obj);
+    let i = 1;
     obj.forEach(element => {
 
         TableBody.insertAdjacentHTML('beforeend', `
 
-        <tr>
+        <tr  class="tabRow" >
+
         <th scope="row">${element.key}</th>
         <td>${element.date}</td>
         <td>${element.name}</td>
@@ -24,43 +25,74 @@ xhr.onload = function() {
         <td>${element.fundraiser}</td>
         <td>${element.amount}</td>
 
-        <td>
-            <a class="deleteRecord" style="color: orangered; text-decoration:
-                    none;" class="p-1" href="#">
+        <td >
+            <a    style="color: orangered; text-decoration:
+                    none;" class="p-1 " href="#">
 
-                <i class="fas fa-times"></i>
+                <i  class="fas fa-times ali"></i>
             </a>
 
             <a style="color: #12b886; text-decoration:
                     none;" class="p-1" href="">
 
-                <i class="fas fa-edit"></i> </td>
-        </a>
-    </tr>
-        
+                <i class="fas fa-edit"></i> 
+                
+                
+            </a>
+            </td>
+        </tr> 
         
         `);
     });
-
-
-
-    ar[0].name
 }
+
+
+
+
 
 xhr.send();
 
 
 
-const myTable = document.querySelector(".table1");
-const tr = myTable.getElementsByTagName('tr');
-const deleteRecord = document.querySelector(".deleteRecord");
+
+
+// const del = document.getElementById('deleteReco');
+// const del = document.getElementsByTagName("i"); // return html collection
+const x = document.querySelector(".tabRow");
+const del = document.getElementsByTagName("i");
+console.log(x);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function searchFunc() {
 
-    console.log("hello");
 
-
+    const myTable = document.querySelector(".table1");
+    const tr = myTable.getElementsByTagName('tr');
 
     let searchKey = document.querySelector("#searchId").value.toUpperCase();
     console.log(searchKey);
@@ -79,13 +111,9 @@ function searchFunc() {
                 console.log("else");
                 tr[i].style.display = "none";
             }
-
-
         }
     }
-
-
-}
+};
 
 
 const SearchBtn = document.querySelector(".searchBtn");
@@ -96,10 +124,9 @@ SearchBtn.addEventListener('click', function(e) {
 
 
 
-
+    const myTable = document.querySelector(".table1");
+    const tr = myTable.getElementsByTagName('tr');
     console.log("I am advance search");
-
-
 
     let searchByDate = document.querySelector("#searchByDate").value.toUpperCase();
     let searchByName = document.querySelector("#searchByName").value.toUpperCase();
@@ -147,45 +174,5 @@ SearchBtn.addEventListener('click', function(e) {
 
 
 
-// function AdvanceSearch(a) {
-
-//     a.pr
-
-
-//     console.log("I am advance search");
-
-
-
-//     let searchByDate = document.querySelector("#searchByDate").value.toUpperCase();
-//     let searchByName = document.querySelector("#searchByName").value.toUpperCase();
-//     let searchByEmail = document.querySelector("#searchByEmail").value.toUpperCase();
-//     let searchByFund = document.querySelector("#searchByFund").value.toUpperCase();
-//     let searchByAmount = document.querySelector("#searchByAmount").value.toUpperCase();
-//     // console.log(searchKey);
-
-
-//     const myTable = document.querySelector(".table1");
-//     const tr = myTable.getElementsByTagName('tr');
-
-//     for (let i = 1; i < tr.length; i++) {
-
-//         let td = tr[i].getElementsByTagName('td')[2];
-
-//         if (td) {
-//             let textvalue = td.textContent || td.innerHTML;
-//             console.log(textvalue);
-
-//             if (textvalue.toUpperCase().indexOf(searchByName) > -1) {
-//                 tr[i].style.display = "";
-//                 console.log("second if");
-//             } else {
-//                 console.log("else");
-//                 tr[i].style.display = "none";
-//             }
-
-
-//         }
-//     }
-
-
-// }
+// const del = document.querySelector(".deleteRecord");
+// const del = document.getElementsByTagName('i');

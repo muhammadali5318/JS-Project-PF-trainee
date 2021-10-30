@@ -108,3 +108,7 @@ form {
 .pass-icon:hover i {
     color: #12b886;
 }
+
+.visibility {
+    visibility: hidden !important;
+}
