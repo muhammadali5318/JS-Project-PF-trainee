@@ -11,10 +11,16 @@ console.log(SignInEmail);
 console.log(SignInpassword);
 
 
+const loginForm = document.querySelector("#LoginForm");
+
+
+
+
+
 
 function SignInForm() {
     // e.preventDefault();
-
+    console.log("form");
 
 
     SignInEmail = SignInEmail.value;
@@ -33,9 +39,9 @@ function SignInForm() {
 
                 if (SignInpassword === JSON.parse(localStorage.getItem(key)).password) {
 
-                    alert("Logged In");
                     window.location.href = "../index.html";
-                    // return false;
+                    alert("Logged In");
+
                 }
 
             }

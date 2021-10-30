@@ -26,10 +26,8 @@ function ForgotPass() {
 
             if (ForgotEmail === key) {
 
-                // ForgotDiv.classList.remove("visibility");
-                ForgotDiv.insertAdjacentHTML("beforeend", `<h5 form-txt mb-4 text-center> Your Password:  ${JSON.parse(localStorage.getItem(key)).password} </h5>`)
+                ForgotDiv.insertAdjacentHTML("beforeend", `<h5 style=" text-align: center;"> Your Password:  ${JSON.parse(localStorage.getItem(key)).password} </h5>`)
 
-                // forgotPas.textContent = ;
 
 
             }
