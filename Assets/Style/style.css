@@ -146,3 +146,19 @@ tr:nth-child(odd) {
 .img-container img {
     width: 100%;
 }
+
+@media (max-width: 800px) {
+    .mediaTable {
+        display: block;
+        overflow-x: auto;
+        /* overflow: scroll; */
+    }
+}
+
+@media (max-width: 1100px) {
+    .mediaTable1 {
+        display: block;
+        overflow-x: auto;
+        /* overflow: scroll; */
+    }
+}
