@@ -1,26 +1,50 @@
 'use strict'
 
-console.log("hello");
+console.log("I'm Login Script");
 
 
 
 let SignInEmail = document.querySelector("#signInEmail");
 let SignInpassword = document.querySelector("#password");
 let SignInBtn = document.querySelector(".SignInBtn");
-console.log(SignInEmail);
-console.log(SignInpassword);
+
+let WelcomeName = "";
 
 
-const loginForm = document.querySelector("#LoginForm");
+// const keys = Object.keys(localStorage);
+// for (let key of keys) {
+
+//     if (SignInEmail === key) {
+
+//         if (SignInpassword === JSON.parse(localStorage.getItem(key)).password) {
+
+//             window.location.href = "../index.html";
+//             alert("Logged In");
+
+//         }
+
+//     }
+// }
 
 
 
+// const welcomeTag = document.querySelector(".WelcomeTag");
+
+// console.log(welcomeTag);
+
+
+// let currentUser = "";
 
 
 
 function SignInForm() {
     // e.preventDefault();
-    console.log("form");
+    // console.log("form");
+
+    // const pro1 = new pr
+
+
+
 
 
     SignInEmail = SignInEmail.value;
@@ -32,6 +56,9 @@ function SignInForm() {
     if ((SignInEmail && SignInpassword) != "") {
 
 
+
+        localStorage.setItem("currentUser", SignInEmail);
+
         const keys = Object.keys(localStorage);
         for (let key of keys) {
 
@@ -39,8 +66,12 @@ function SignInForm() {
 
                 if (SignInpassword === JSON.parse(localStorage.getItem(key)).password) {
 
-                    window.location.href = "../index.html";
+
+                    WelcomeName = JSON.parse(localStorage.getItem(key)).name;
+                    // console.log(WelcomeName);
+                    // timeOut();
                     alert("Logged In");
+                    window.location.href = "../index.html";
 
                 }
 

@@ -1,5 +1,6 @@
 'use strict'
 
+console.log("I'm Listing script");
 
 const TableBody = document.querySelector(".table-body");
 // console.log(TableBody);
@@ -55,23 +56,93 @@ xhr.send();
 
 
 
+// *************************** Add New Transaction ************************
 
-// const del = document.getElementById('deleteReco');
-// const del = document.getElementsByTagName("i"); // return html collection
-const x = document.querySelector(".tabRow");
-const del = document.getElementsByTagName("i");
-console.log(x);
-
-
-
-
-
+const AddTransBtn = document.querySelector(".AddTransBtn");
+let AddTransDate = document.querySelector("#AddTransDate");
+let AddTransName = document.querySelector("#AddTransName");
+let AddTransEmail = document.querySelector("#AddTransEmail");
+let AddTransFund = document.querySelector("#AddTransFund");
+let AddTransAmount = document.querySelector("#AddTransAmount");
+// console.log(AddTransDate);
 
 
 
+AddTransBtn.addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        AddTransDate = AddTransDate.value;
+        AddTransName = AddTransName.value;
+        AddTransEmail = AddTransEmail.value;
+        AddTransFund = AddTransFund.value;
+        AddTransAmount = AddTransAmount.value;
 
 
 
+
+        const transObj = {
+            TransDate: AddTransDate,
+            TransName: AddTransName,
+            TransEmail: AddTransEmail,
+            TransFund: AddTransFund,
+            TransAmount: AddTransAmount
+        }
+
+        // ar1.push(transObj);
+        // console.log(ar1);/
+        localStorage.setItem("Transaction", JSON.stringify(transObj));
+
+
+        const transactionData = JSON.parse(localStorage.getItem("Transaction"));
+
+        // console.log(AddTransName);
+        // 
+        // console.log(TableBody);
+
+
+
+
+        TableBody.insertAdjacentHTML('beforeend', `
+
+    <tr  class="tabRow" >
+
+     <th scope="row">22</th>
+     <td>${transactionData.TransDate}</td>
+     <td>${transactionData.TransName}</td>
+     <td>${transactionData.TransEmail}</td>
+     <td>${transactionData.TransFund}</td>
+     <td>${transactionData.TransAmount}</td>
+
+
+
+    <td >
+        <a    style="color: orangered; text-decoration:
+                none;" class="p-1 " href="#">
+
+            <i  class="fas fa-times ali"></i>
+        </a>
+
+        <a style="color: #12b886; text-decoration:
+                none;" class="p-1" href="">
+
+            <i class="fas fa-edit"></i> 
+
+
+        </a>
+        </td>
+    </tr> 
+
+    `);
+        // alert("ok");
+
+
+    }
+
+);
+const ar1 = [];
+
+// function addNewTrans() 
 
 
 
