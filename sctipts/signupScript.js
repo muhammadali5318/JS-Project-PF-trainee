@@ -15,6 +15,22 @@ let validate = true;
 
 function signUpForm() {
 
+
+    const xhr = new XMLHttpRequest();
+
+    xhr.open('get', "https://api.ipify.org?format=json", "true");
+
+    xhr.onload = function() {
+        const UserIp = JSON.parse(this.responseText).ip;
+        localStorage.setItem("userIp", UserIp);
+        console.log(UserIp);
+    }
+
+
+    xhr.send();
+
+
+
     console.log("signuprun");
 
 
@@ -30,32 +46,14 @@ function signUpForm() {
 
 
     const obj = {
-            name: signUpname,
-            email: SignUpEmail,
-            password: SignUpPassword,
-            confirmPassword: SignUpConPassword,
-            SignUpTime: time,
-            UserAgent: agent
+        name: signUpname,
+        email: SignUpEmail,
+        password: SignUpPassword,
+        confirmPassword: SignUpConPassword,
+        SignUpTime: time,
+        UserAgent: agent
 
-        }
-        // console.log(obj);
-        // const XHReq = new XMLHttpRequest();
-
-    // XHReq.open('Get', "https://api.ipify.org?format=json", "true");
-
-    // XHReq.onload = function() {
-
-    //     var Ip = JSON.parse(this.responseText);
-    //     Ip = Ip.ip;
-    //     obj.UserIp = Ip;
-    //     console.log(obj.UserIp);
-    //     // return UserIp
-    // }
-    // XHReq.send();
-    // console.log(obj);
-
-
-
+    }
 
 
 
@@ -91,7 +89,18 @@ function signUpForm() {
         alert("Kindly Fill the information Correctly");
     }
 
+
+
+    // *********************IP Request*********************
+
+
+
 }
+
+
+
+
+
 
 
 
