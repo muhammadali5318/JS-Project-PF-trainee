@@ -21,9 +21,9 @@ const user = localStorage.getItem("currentUser");
 
 
 
-    // getting all the data keys from local storage and store it into a variable
-    // "for of" loop treverse all the keys and fetch data against current user variable and render it into the form.
-     
+// getting all the data keys from local storage and store it into a variable
+// "for of" loop treverse all the keys and fetch data against current user variable and render it into the form.
+
 const keys = Object.keys(localStorage);
 for (let key of keys) {
     if (key === user) {
@@ -40,7 +40,7 @@ ProfileName = ProfileName.value;
 ProfileEmail = ProfileEmail.value;
 ProfilePassword = ProfilePassword.value;
 ProfileConPassword = ProfileConPassword.value;
-console.log(ProfileEmail);
+
 
 
 
@@ -50,25 +50,25 @@ let validate = true;
 function UpdateInfo() {
 
 
-//Getting all the fields of update profile form
+    //Getting all the fields of update profile form
     let ProfileNameUpdate = document.querySelector("#ProfileName");
     let ProfilePasswordUpdate = document.querySelector("#ProfilePassword");
     let ProfileConPasswordUpdate = document.querySelector("#ProfileConPassword");
     let ProfileEmailUpdate = document.querySelector("#ProfileEmail");
 
 
-//getting all the values after user updated the value into forms.
+    //getting all the values after user updated the value into forms.
     ProfileNameUpdate = ProfileNameUpdate.value;
     ProfileEmailUpdate = ProfileEmailUpdate.value;
     ProfilePasswordUpdate = ProfilePasswordUpdate.value;
     ProfileConPasswordUpdate = ProfileConPasswordUpdate.value;
-    
-//stroing date and user agent into the L.S
+
+    //stroing date and user agent into the L.S
     const time = new Date();
     const agent = navigator.userAgent;
 
 
-//Storing all the values into the object
+    //Storing all the values into the object
     const obj = {
         name: ProfileNameUpdate,
         email: ProfileEmailUpdate,
@@ -81,9 +81,9 @@ function UpdateInfo() {
 
     if (true) {
 
-        
-// getting all the data keys from local storage and store it into a variable
-// "for of loop" treverse all the key and fetch the data againset desired email. and render that specific data on profile form
+
+        // getting all the data keys from local storage and store it into a variable
+        // "for of loop" treverse all the key and fetch the data againset desired email. and render that specific data on the form
         const keys = Object.keys(localStorage);
         for (let key of keys) {
 

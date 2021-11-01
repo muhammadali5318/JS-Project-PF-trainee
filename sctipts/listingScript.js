@@ -42,13 +42,13 @@ xhr.onload = function() {
 
         <td >
             <a    style="color: orangered; text-decoration:
-                    none;" class="p-1 " href="#">
+                    none;" class="p-1 deleteRecord" href="#">
 
                 <i  class="fas fa-times ali"></i>
             </a>
 
-            <a style="color: #12b886; text-decoration:
-                    none;" class="p-1" href="">
+            <a style="color:  #12b886; text-decoration:
+                    none;" data-bs-toggle="modal" data-bs-target="#SearchModal11" data-bs-whatever="@mdo" class="p-1 viewRecDetails" href="#">
 
                 <i class="fas fa-edit"></i> 
                 
@@ -66,6 +66,124 @@ xhr.send();
 
 
 
+setTimeout(() => {
+
+    deleteRec();
+
+    const viewRecDetails = document.querySelectorAll(".viewRecDetails");
+
+    viewRecDetails.forEach((element, index) => {
+
+        // console.log(element);
+        element.addEventListener('click', function() {
+
+            // console.log(index);
+
+
+
+            const ViewAllKey = document.querySelector("#ViewAllKey");
+            const ViewAllDate = document.querySelector("#ViewAllDate");
+            const ViewAllTransId = document.querySelector("#ViewAllTransId");
+            const ViewAllName = document.querySelector("#ViewAllName");
+            const ViewAllFatherName = document.querySelector("#ViewAllFatherName");
+            const ViewAllEmail = document.querySelector("#ViewAllEmail");
+            const ViewAllFund = document.querySelector("#ViewAllFund");
+            const ViewAllAmount = document.querySelector("#ViewAllAmount");
+            const ViewAllCountry = document.querySelector("#ViewAllCountry");
+            const ViewAllMobile = document.querySelector("#ViewAllMobile");
+            const ViewAllAge = document.querySelector("#ViewAllAge");
+            const ViewAllPassport = document.querySelector("#ViewAllPassport");
+            const ViewAllIncome = document.querySelector("#ViewAllIncome");
+            const ViewAllCity = document.querySelector("#ViewAllCity");
+
+
+
+            const xhr = new XMLHttpRequest();
+
+            xhr.open('get', "data.json", "true");
+
+
+            // getting all the json.data   and storing its response into an object 
+
+            xhr.onload = function() {
+                const obj1 = JSON.parse(this.responseText);
+
+                // console.log(obj1[index].name);
+                ViewAllKey.setAttribute("value", obj1[index].key);
+                ViewAllDate.setAttribute("value", obj1[index].date);
+                ViewAllTransId.setAttribute("value", obj1[index].transactoinid);
+                ViewAllName.setAttribute("value", obj1[index].name);
+                ViewAllFatherName.setAttribute("value", obj1[index].fatherName);
+                ViewAllEmail.setAttribute("value", obj1[index].email);
+                ViewAllFund.setAttribute("value", obj1[index].fundraiser);
+                ViewAllAmount.setAttribute("value", obj1[index].amount);
+                ViewAllCountry.setAttribute("value", obj1[index].country);
+                ViewAllMobile.setAttribute("value", obj1[index].mobile);
+                ViewAllAge.setAttribute("value", obj1[index].age);
+                ViewAllPassport.setAttribute("value", obj1[index].Passport);
+                ViewAllIncome.setAttribute("value", obj1[index].income);
+                ViewAllCity.setAttribute("value", obj1[index].city);
+
+
+
+            }
+
+
+            xhr.send();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        })
+    });
+
+}, 1000);
+
+
+
+//This function deletes the record from table. 
+function deleteRec() {
+
+    const myTable = document.querySelector(".table1");
+    const tr = myTable.getElementsByTagName('tr');
+    const DeleteId = document.querySelector("#DeleteId1");
+    const deleteRecord = document.querySelectorAll(".deleteRecord");
+
+    deleteRecord.forEach((element, index) => {
+        element.addEventListener('click', function() {
+
+            const confirmation = confirm("Are you sure you want to delete this record?")
+            if (confirmation) {
+                tr[index + 1].style.display = "none";
+            }
+
+        })
+    });
+}
 
 // *************************** Add New Transaction ************************
 
@@ -152,10 +270,10 @@ function searchFunc() {
     const tr = myTable.getElementsByTagName('tr');
 
     let searchKey = document.querySelector("#searchId").value.toUpperCase();
-    console.log(searchKey);
+    // console.log(searchKey);
 
     for (let i = 1; i < tr.length; i++) {
-        let td = tr[i].getElementsByTagName('td')[1];
+        let td = tr[i].getElementsByTagName('td')[2];
 
         if (td) {
             let textvalue = td.textContent || td.innerHTML;
