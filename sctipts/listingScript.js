@@ -25,7 +25,7 @@ xhr.open('get', "data.json", "true");
 
 xhr.onload = function() {
     const obj = JSON.parse(this.responseText);
-    
+
     // "for each" loop treverse all the JSON data and render it on table
     obj.forEach(element => {
 
@@ -232,5 +232,3 @@ SearchBtn.addEventListener('click', function(e) {
 
 
 });
-
-

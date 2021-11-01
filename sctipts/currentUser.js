@@ -1,6 +1,12 @@
 // ********************Nav bar welcome Name rendering *********************** 
 
 
+/*
+Purpose: This file CurrentUser.js is responsible to Render Current user name into nav bar..
+*/
+
+
+
 const user1 = localStorage.getItem("currentUser");
 
 
@@ -18,8 +24,7 @@ for (let key of keysOfLS) {
 
                                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Welcome ${CurrentUserData.name}
-                                        </a>
+                                            </a>
         `);
     }
 }
-
