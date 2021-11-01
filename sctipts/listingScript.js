@@ -69,7 +69,14 @@ xhr.send();
 setTimeout(() => {
 
     deleteRec();
+    viewAllDetails();
 
+}, 1000);
+
+
+
+//This function fetches all details from json file and display the complete record
+function viewAllDetails() {
     const viewRecDetails = document.querySelectorAll(".viewRecDetails");
 
     viewRecDetails.forEach((element, index) => {
@@ -160,9 +167,7 @@ setTimeout(() => {
 
         })
     });
-
-}, 1000);
-
+}
 
 
 //This function deletes the record from table. 
