@@ -121,6 +121,22 @@ body {
     margin: 0px;
 }
 
+.account-p {
+    color: #555;
+}
+
+thead {
+    background-color: #12b886;
+}
+
+.table {
+    background-color: #f1f3f5;
+}
+
+.table-head {
+    background-color: #12b886;
+}
+
 tr:nth-child(even) {
     background-color: #e6fcf5;
 }

@@ -3,62 +3,38 @@
 console.log("I'm Login Script");
 
 
+/*
+Purpose: This file Login.js is responsible Data validation of user and log him into the system
+*/
 
+
+
+
+//Getting fields in which user enters data
 let SignInEmail = document.querySelector("#signInEmail");
 let SignInpassword = document.querySelector("#password");
 let SignInBtn = document.querySelector(".SignInBtn");
 
-let WelcomeName = "";
-
-
-// const keys = Object.keys(localStorage);
-// for (let key of keys) {
-
-//     if (SignInEmail === key) {
-
-//         if (SignInpassword === JSON.parse(localStorage.getItem(key)).password) {
-
-//             window.location.href = "../index.html";
-//             alert("Logged In");
-
-//         }
-
-//     }
-// }
 
 
 
-// const welcomeTag = document.querySelector(".WelcomeTag");
-
-// console.log(welcomeTag);
-
-
-// let currentUser = "";
-
-
-
+// When we click on "sign in"  button this function will be invoked
 function SignInForm() {
-    // e.preventDefault();
-    // console.log("form");
 
-    // const pro1 = new pr
-
-
-
-
-
+    //Fetching the value that user entered in the fields
     SignInEmail = SignInEmail.value;
     SignInpassword = SignInpassword.value;
 
 
-
-
+    //Sign in Form validation
     if ((SignInEmail && SignInpassword) != "") {
 
 
-
+        // storing the user information into who is logged in into 
         localStorage.setItem("currentUser", SignInEmail);
 
+        // getting all the data keys from local storage and store it into a variable
+        // "for of" loop treverse all the keys and if email is unique than data will be stored is L.S.
         const keys = Object.keys(localStorage);
         for (let key of keys) {
 
@@ -67,9 +43,6 @@ function SignInForm() {
                 if (SignInpassword === JSON.parse(localStorage.getItem(key)).password) {
 
 
-                    WelcomeName = JSON.parse(localStorage.getItem(key)).name;
-                    // console.log(WelcomeName);
-                    // timeOut();
                     alert("Logged In");
                     window.location.href = "../index.html";
 
@@ -83,6 +56,9 @@ function SignInForm() {
 };
 
 
+
+
+// these two fuctions are responsile for show password option. When user click on show password icon password will be visible to user 
 let state = false;
 
 function toggle() {

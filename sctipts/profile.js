@@ -3,63 +3,72 @@
 console.log("I'm user profile");
 
 
-// ********************Nav bar welcome *********************** 
+/*
+Purpose: This file profile.js is responsible to show user data who is logged in.
+and user can also update his data from this page
+*/
+
+
+
+//Getting all the fields of update profile form
 let ProfileName = document.querySelector("#ProfileName");
 let ProfileEmail = document.querySelector("#ProfileEmail");
 let ProfilePassword = document.querySelector("#ProfilePassword");
 let ProfileConPassword = document.querySelector("#ProfileConPassword");
 
-console.log(ProfilePassword);
-
-
+//Gatinng the current user who is logged In
 const user = localStorage.getItem("currentUser");
 
 
+
+    // getting all the data keys from local storage and store it into a variable
+    // "for of" loop treverse all the keys and fetch data against current user variable and render it into the form.
+     
 const keys = Object.keys(localStorage);
 for (let key of keys) {
-    // console.log(key);
     if (key === user) {
         const CurrentUserData = JSON.parse(localStorage.getItem(key));
         ProfileName.setAttribute("value", CurrentUserData.name);
         ProfileEmail.setAttribute("value", CurrentUserData.email);
         ProfilePassword.setAttribute("value", CurrentUserData.password);
         ProfileConPassword.setAttribute("value", CurrentUserData.confirmPassword);
-
-
     }
 }
 
-
+//getting all the values that user entered in the into forms.
 ProfileName = ProfileName.value;
 ProfileEmail = ProfileEmail.value;
 ProfilePassword = ProfilePassword.value;
 ProfileConPassword = ProfileConPassword.value;
 console.log(ProfileEmail);
+
+
+
+// this variable is responsible for checking emails it is already exists or not
 let validate = true;
 
 function UpdateInfo() {
 
 
+//Getting all the fields of update profile form
     let ProfileNameUpdate = document.querySelector("#ProfileName");
     let ProfilePasswordUpdate = document.querySelector("#ProfilePassword");
     let ProfileConPasswordUpdate = document.querySelector("#ProfileConPassword");
     let ProfileEmailUpdate = document.querySelector("#ProfileEmail");
 
 
+//getting all the values after user updated the value into forms.
     ProfileNameUpdate = ProfileNameUpdate.value;
     ProfileEmailUpdate = ProfileEmailUpdate.value;
     ProfilePasswordUpdate = ProfilePasswordUpdate.value;
     ProfileConPasswordUpdate = ProfileConPasswordUpdate.value;
-    console.log(ProfileEmailUpdate);
-
-
-    // console.log(signUpname);
-
+    
+//stroing date and user agent into the L.S
     const time = new Date();
     const agent = navigator.userAgent;
 
 
-
+//Storing all the values into the object
     const obj = {
         name: ProfileNameUpdate,
         email: ProfileEmailUpdate,
@@ -70,13 +79,11 @@ function UpdateInfo() {
     }
 
 
-
-
-    console.log(obj);
-
     if (true) {
 
-
+        
+// getting all the data keys from local storage and store it into a variable
+// "for of loop" treverse all the key and fetch the data againset desired email. and render that specific data on profile form
         const keys = Object.keys(localStorage);
         for (let key of keys) {
 

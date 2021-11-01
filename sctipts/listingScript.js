@@ -2,17 +2,31 @@
 
 console.log("I'm Listing script");
 
-const TableBody = document.querySelector(".table-body");
-// console.log(TableBody);
 
+/*
+Purpose: This file listingScript.js is responsible redner all the data from "data.json" file in the tabel.
+user can search data by name and user can also use advance search to find specific record
+*/
+
+
+
+
+//getting table body in which we want to render date
+const TableBody = document.querySelector(".table-body");
+
+
+// ***************  Fetching Data From "Data.JSON" By API calling ****************
 const xhr = new XMLHttpRequest();
 
 xhr.open('get', "data.json", "true");
 
+
+// getting all the json.data   and storing its response into an object 
+
 xhr.onload = function() {
     const obj = JSON.parse(this.responseText);
-    // console.log(obj);
-    let i = 1;
+    
+    // "for each" loop treverse all the JSON data and render it on table
     obj.forEach(element => {
 
         TableBody.insertAdjacentHTML('beforeend', `
@@ -48,9 +62,6 @@ xhr.onload = function() {
 }
 
 
-
-
-
 xhr.send();
 
 
@@ -64,8 +75,6 @@ let AddTransName = document.querySelector("#AddTransName");
 let AddTransEmail = document.querySelector("#AddTransEmail");
 let AddTransFund = document.querySelector("#AddTransFund");
 let AddTransAmount = document.querySelector("#AddTransAmount");
-// console.log(AddTransDate);
-
 
 
 AddTransBtn.addEventListener("click", function(e) {
@@ -89,19 +98,10 @@ AddTransBtn.addEventListener("click", function(e) {
             TransAmount: AddTransAmount
         }
 
-        // ar1.push(transObj);
-        // console.log(ar1);/
         localStorage.setItem("Transaction", JSON.stringify(transObj));
 
 
         const transactionData = JSON.parse(localStorage.getItem("Transaction"));
-
-        // console.log(AddTransName);
-        // 
-        // console.log(TableBody);
-
-
-
 
         TableBody.insertAdjacentHTML('beforeend', `
 
@@ -134,29 +134,15 @@ AddTransBtn.addEventListener("click", function(e) {
     </tr> 
 
     `);
-        // alert("ok");
 
 
     }
 
 );
-const ar1 = [];
-
-// function addNewTrans() 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+// ************************** simple search function *******************
 
 
 function searchFunc() {
@@ -185,6 +171,10 @@ function searchFunc() {
         }
     }
 };
+
+
+
+// **************************** Advance Search Function ********************
 
 
 const SearchBtn = document.querySelector(".searchBtn");
@@ -244,6 +234,3 @@ SearchBtn.addEventListener('click', function(e) {
 });
 
 
-
-// const del = document.querySelector(".deleteRecord");
-// const del = document.getElementsByTagName('i');

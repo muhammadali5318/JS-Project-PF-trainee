@@ -1,4 +1,4 @@
-// ********************Nav bar welcome *********************** 
+// ********************Nav bar welcome Name rendering *********************** 
 
 
 const user1 = localStorage.getItem("currentUser");
