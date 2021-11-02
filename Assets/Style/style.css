@@ -114,6 +114,11 @@ body {
     color: #045c41 !important;
 }
 
+.modal-content {
+    background-color: transparent;
+    border: none;
+}
+
 .search {
     width: 8rem;
     height: 2rem;

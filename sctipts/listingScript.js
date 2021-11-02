@@ -143,28 +143,6 @@ function viewAllDetails() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         })
     });
 }
